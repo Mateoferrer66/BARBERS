@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
+  <title>BARBERS ELITE | Barbería Premium & Cuidado Masculino</title>
+  <meta name="description" content="Barbería premium de alto nivel. Cortes personalizados, arreglo de barba, tratamientos capilares, productos profesionales. Reserva tu cita ahora.">
+  <meta name="keywords" content="barbería, corte de pelo, barba, tratamiento capilar, barbería premium, grooming masculino">
+  <meta name="author" content="BARBERS ELITE">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BARBERS ELITE | Barbería Premium & Cuidado Masculino">
+  <meta property="og:description" content="El arte de la barbería premium. Servicios exclusivos, productos de alta gama y atención excepcional.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💈</text></svg>">
+</head>
+<body>
+
+  <!-- 3D Background Canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon">BE</div>
+        <div class="nav-logo-text">BARBERS <span>ELITE</span></div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">Nosotros</a>
+        <a href="#services">Servicios</a>
+        <a href="#products">Productos</a>
+        <a href="#treatments">Tratamientos</a>
+        <a href="#team">Equipo</a>
+        <a href="#contact">Contacto</a>
+        <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20reservar%20una%20cita" target="_blank" class="nav-cta">Reservar Cita</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-nav-links">
+      <a href="#about">Nosotros</a>
+      <a href="#services">Servicios</a>
+      <a href="#products">Productos</a>
+      <a href="#treatments">Tratamientos</a>
+      <a href="#team">Equipo</a>
+      <a href="#contact">Contacto</a>
+      <a href="https://wa.me/573001234567" target="_blank" style="color: var(--accent-green);">Reservar Cita</a>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Barbería Premium Desde 2018</div>
+      <h1 class="hero-title">
+        EL ARTE DE LA<br>
+        <span class="gold">BARBERÍA PREMIUM</span>
+      </h1>
+      <p class="hero-subtitle">"Donde cada corte es una obra maestra y cada detalle cuenta"</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20BARBERS%20ELITE" target="_blank" class="btn btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <a href="#services" class="btn btn-outline">Ver Servicios</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal-left">
+          <img src="assets/images/about.png" alt="Interior premium de BARBERS ELITE" loading="lazy">
+          <div class="about-image-badge">
+            <div class="number" data-count="7" data-suffix="+">0</div>
+            <div class="label">Años de Experiencia</div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <span class="section-label">Sobre Nosotros</span>
+          <h2 class="section-title">Más Que Una Barbería, Una Experiencia</h2>
+          <p class="about-text">
+            En <strong>BARBERS ELITE</strong> fusionamos la tradición de la barbería clásica con las últimas tendencias del grooming masculino. Cada visita es una experiencia sensorial completa: desde el aroma de nuestros productos premium hasta el sonido de las navajas artesanales.
+          </p>
+          <p class="about-text">
+            Nuestro equipo de barberos expertos está dedicado a realzar tu estilo personal con cortes precisos, tratamientos faciales rejuvenecedores y un servicio que supera expectativas.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="5000" data-suffix="+">0</div>
+              <div class="stat-label">Clientes Felices</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="12">0</div>
+              <div class="stat-label">Barberos Expertos</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="15">0</div>
+              <div class="stat-label">Servicios Premium</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nuestros Servicios</span>
+        <h2 class="section-title">Servicios Premium de Barbería</h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">Cada servicio está diseñado para ofrecerte una experiencia de lujo incomparable</p>
+      </div>
+
+      <div class="services-grid stagger-children">
+        <!-- Service 1 -->
+        <div class="service-card reveal">
+          <div class="service-icon">✂️</div>
+          <h3 class="service-name">Corte Clásico</h3>
+          <p class="service-desc">Corte personalizado con tijera y navaja. Incluye lavado y styling final.</p>
+          <div class="service-price">$25.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20agendar%20un%20corte%20clásico" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🧔</div>
+          <h3 class="service-name">Arreglo de Barba</h3>
+          <p class="service-desc">Perfilado, diseño y cuidado profesional de barba con productos premium.</p>
+          <div class="service-price">$20.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20un%20arreglo%20de%20barba" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🚿</div>
+          <h3 class="service-name">Lavado Premium</h3>
+          <p class="service-desc">Lavado con shampoo profesional, masaje capilar y acondicionamiento profundo.</p>
+          <div class="service-price">$15.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20un%20lavado%20premium" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card reveal">
+          <div class="service-icon">✨</div>
+          <h3 class="service-name">Exfoliación Facial</h3>
+          <p class="service-desc">Limpieza profunda, exfoliación y revitalización de la piel del rostro.</p>
+          <div class="service-price">$30.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20una%20exfoliación%20facial" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card reveal">
+          <div class="service-icon">👁️</div>
+          <h3 class="service-name">Diseño de Cejas</h3>
+          <p class="service-desc">Perfilado y diseño profesional de cejas para un look impecable.</p>
+          <div class="service-price">$12.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20diseño%20de%20cejas" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-name">Estilos Personalizados</h3>
+          <p class="service-desc">Diseños únicos, degradados artísticos y tendencias de vanguardia.</p>
+          <div class="service-price">$45.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20un%20estilo%20personalizado" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card reveal">
+          <div class="service-icon">🧖</div>
+          <h3 class="service-name">Mascarilla Facial</h3>
+          <p class="service-desc">Tratamiento rejuvenecedor con mascarilla premium para rostro y cuello.</p>
+          <div class="service-price">$35.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20una%20mascarilla%20facial" target="_blank" class="btn btn-outline btn-sm">Reservar</a>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card reveal">
+          <div class="service-icon">⭐</div>
+          <h3 class="service-name">Combo VIP</h3>
+          <p class="service-desc">Corte + Barba + Lavado + Exfoliación. La experiencia completa de lujo.</p>
+          <div class="service-price">$55.000 <span>COP</span></div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20el%20Combo%20VIP" target="_blank" class="btn btn-gold btn-sm">Reservar VIP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Tienda</span>
+        <h2 class="section-title">Productos Profesionales</h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">Los mejores productos para el cuidado y styling masculino de alta gama</p>
+      </div>
+
+      <div class="product-filters reveal">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="maquinas">Máquinas</button>
+        <button class="filter-btn" data-filter="shampoo">Shampoos</button>
+        <button class="filter-btn" data-filter="minoxidil">Minoxidil</button>
+        <button class="filter-btn" data-filter="styling">Ceras & Pomadas</button>
+        <button class="filter-btn" data-filter="aceites">Aceites</button>
+        <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+      </div>
+
+      <div class="products-grid stagger-children">
+        <!-- Product 1 -->
+        <div class="product-card reveal" data-category="maquinas">
+          <div class="product-image">
+            <img src="assets/images/product-clipper.png" alt="Máquina de Corte Pro X1" loading="lazy">
+            <span class="product-badge">Bestseller</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Máquinas</div>
+            <h4 class="product-name">Máquina de Corte Pro X1</h4>
+            <p class="product-desc">Cortadora profesional inalámbrica con cuchillas de titanio y 4 horas de autonomía.</p>
+            <div class="product-footer">
+              <span class="product-price">$185.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20la%20Máquina%20Pro%20X1" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card reveal" data-category="maquinas">
+          <div class="product-image">
+            <img src="assets/images/product-clipper.png" alt="Trimmer Precision Elite" loading="lazy">
+            <span class="product-badge">Nuevo</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Máquinas</div>
+            <h4 class="product-name">Trimmer Precision Elite</h4>
+            <p class="product-desc">Trimmer de precisión para acabados, contornos y detalles finos en barba y cabello.</p>
+            <div class="product-footer">
+              <span class="product-price">$145.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Trimmer%20Precision%20Elite" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card reveal" data-category="shampoo">
+          <div class="product-image">
+            <img src="assets/images/product-shampoo.png" alt="Shampoo Anti-Caída Premium" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Shampoos</div>
+            <h4 class="product-name">Shampoo Anti-Caída Premium</h4>
+            <p class="product-desc">Fórmula con biotina y keratina para fortalecer el cabello y prevenir la caída.</p>
+            <div class="product-footer">
+              <span class="product-price">$42.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Shampoo%20Anti-Caída" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card reveal" data-category="shampoo">
+          <div class="product-image">
+            <img src="assets/images/product-shampoo.png" alt="Shampoo Carbon Activado" loading="lazy">
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Shampoos</div>
+            <h4 class="product-name">Shampoo Carbón Activado</h4>
+            <p class="product-desc">Limpieza profunda con carbón activado. Elimina impurezas y exceso de grasa.</p>
+            <div class="product-footer">
+              <span class="product-price">$38.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Shampoo%20Carbón%20Activado" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card reveal" data-category="minoxidil">
+          <div class="product-image">
+            <img src="assets/images/product-minoxidil.png" alt="Minoxidil 5% Tratamiento" loading="lazy">
+            <span class="product-badge">Tratamiento</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Minoxidil</div>
+            <h4 class="product-name">Minoxidil 5% Tratamiento</h4>
+            <p class="product-desc">Solución tópica para estimular el crecimiento del cabello y la barba. Uso diario.</p>
+            <div class="product-footer">
+              <span class="product-price">$55.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Minoxidil%205%25" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card reveal" data-category="minoxidil">
+          <div class="product-image">
+            <img src="assets/images/product-minoxidil.png" alt="Minoxidil + Biotina Kit" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Minoxidil</div>
+            <h4 class="product-name">Minoxidil + Biotina Kit</h4>
+            <p class="product-desc">Kit completo con minoxidil 5%, biotina en cápsulas y dermaroller incluido.</p>
+            <div class="product-footer">
+              <span class="product-price">$89.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Kit%20Minoxidil%20+%20Biotina" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card reveal" data-category="styling">
+          <div class="product-image">
+            <img src="assets/images/products.png" alt="Pomada Mate Profesional" loading="lazy">
+            <span class="product-badge">Top Ventas</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Ceras & Pomadas</div>
+            <h4 class="product-name">Pomada Mate Profesional</h4>
+            <p class="product-desc">Acabado mate natural con fijación fuerte. Sin residuos, fácil de lavar.</p>
+            <div class="product-footer">
+              <span class="product-price">$32.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20la%20Pomada%20Mate" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card reveal" data-category="aceites">
+          <div class="product-image">
+            <img src="assets/images/products.png" alt="Aceite para Barba Premium" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Aceites</div>
+            <h4 class="product-name">Aceite para Barba Premium</h4>
+            <p class="product-desc">Mezcla de aceites esenciales de argán, jojoba y vitamina E para barba suave y brillante.</p>
+            <div class="product-footer">
+              <span class="product-price">$28.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Aceite%20para%20Barba" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product-card reveal" data-category="accesorios">
+          <div class="product-image">
+            <img src="assets/images/products.png" alt="Kit Cepillo y Peine Barba" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Accesorios</div>
+            <h4 class="product-name">Kit Cepillo & Peine Barba</h4>
+            <p class="product-desc">Cepillo de cerdas naturales y peine de madera de sándalo. Kit profesional.</p>
+            <div class="product-footer">
+              <span class="product-price">$35.000</span>
+              <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20el%20Kit%20Cepillo%20y%20Peine" target="_blank" class="product-buy-btn">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TREATMENTS ========== -->
+  <section class="treatments" id="treatments">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Tratamientos Especializados</span>
+        <h2 class="section-title">Tratamientos Premium</h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">Tecnología avanzada y productos de alta gama para resultados extraordinarios</p>
+      </div>
+
+      <!-- Treatment 1 -->
+      <div class="treatment-card reveal">
+        <div class="treatment-image">
+          <img src="assets/images/treatment.png" alt="Tratamiento Capilar con Keratina" loading="lazy">
+        </div>
+        <div class="treatment-content">
+          <span class="treatment-tag">⭐ Más Solicitado</span>
+          <h3 class="treatment-title">Tratamiento Capilar Keratina</h3>
+          <p class="treatment-desc">Restauración profunda del cabello con keratina brasileña premium. Elimina el frizz, aporta brillo intenso y suavidad duradera por hasta 3 meses.</p>
+          <div class="treatment-features">
+            <span class="treatment-feature">Anti-Frizz</span>
+            <span class="treatment-feature">Brillo Intenso</span>
+            <span class="treatment-feature">3 Meses Duración</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20info%20sobre%20el%20tratamiento%20de%20keratina" target="_blank" class="btn btn-gold btn-sm">Reservar — $80.000</a>
+        </div>
+      </div>
+
+      <!-- Treatment 2 -->
+      <div class="treatment-card reveal">
+        <div class="treatment-image">
+          <img src="assets/images/about.png" alt="Tratamiento Facial Completo" loading="lazy">
+        </div>
+        <div class="treatment-content">
+          <span class="treatment-tag">🧖 Rejuvenecimiento</span>
+          <h3 class="treatment-title">Facial Completo Premium</h3>
+          <p class="treatment-desc">Limpieza profunda, exfoliación con enzimas naturales, mascarilla de colágeno y masaje facial relajante. Tu piel como nueva.</p>
+          <div class="treatment-features">
+            <span class="treatment-feature">Limpieza Profunda</span>
+            <span class="treatment-feature">Colágeno</span>
+            <span class="treatment-feature">Masaje Facial</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20info%20sobre%20el%20facial%20completo" target="_blank" class="btn btn-gold btn-sm">Reservar — $65.000</a>
+        </div>
+      </div>
+
+      <!-- Treatment 3 -->
+      <div class="treatment-card reveal">
+        <div class="treatment-image">
+          <img src="assets/images/gallery-styles.png" alt="Coloración y Decoloración" loading="lazy">
+        </div>
+        <div class="treatment-content">
+          <span class="treatment-tag">🎨 Transformación</span>
+          <h3 class="treatment-title">Coloración & Decoloración</h3>
+          <p class="treatment-desc">Cambio de look con productos libres de amoniaco. Mechas, balayage, platinados y colores fantasía con cuidado profesional.</p>
+          <div class="treatment-features">
+            <span class="treatment-feature">Sin Amoniaco</span>
+            <span class="treatment-feature">Mechas</span>
+            <span class="treatment-feature">Platinado</span>
+            <span class="treatment-feature">Balayage</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20info%20sobre%20coloración" target="_blank" class="btn btn-gold btn-sm">Reservar — Desde $60.000</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nuestro Trabajo</span>
+        <h2 class="section-title">Galería de Estilos</h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">Inspírate con los estilos y cortes que definen la excelencia</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img src="assets/images/gallery-styles.png" alt="Fade moderno con diseño" loading="lazy">
+          <div class="gallery-overlay"><span>Fade Moderno</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/treatment.png" alt="Tratamiento capilar" loading="lazy">
+          <div class="gallery-overlay"><span>Tratamiento Premium</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/about.png" alt="Barbero trabajando" loading="lazy">
+          <div class="gallery-overlay"><span>Experiencia VIP</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/hero-bg.png" alt="Interior luxury" loading="lazy">
+          <div class="gallery-overlay"><span>Nuestro Espacio</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/products.png" alt="Productos premium" loading="lazy">
+          <div class="gallery-overlay"><span>Productos Premium</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/team-member.png" alt="Barbero profesional" loading="lazy">
+          <div class="gallery-overlay"><span>Nuestro Equipo</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/product-clipper.png" alt="Herramientas profesionales" loading="lazy">
+          <div class="gallery-overlay"><span>Herramientas Pro</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/product-shampoo.png" alt="Cuidado capilar" loading="lazy">
+          <div class="gallery-overlay"><span>Cuidado Capilar</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM ========== -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">El Equipo</span>
+        <h2 class="section-title">Nuestros Barberos Expertos</h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">Profesionales apasionados que convierten cada corte en arte</p>
+      </div>
+
+      <div class="team-grid stagger-children">
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/images/team-member.png" alt="Carlos Mendoza - Master Barber" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="TikTok">🎵</a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Carlos Mendoza</h4>
+            <p class="team-role">Master Barber</p>
+            <div class="team-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/images/team-member.png" alt="Andrés Restrepo - Senior Barber" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="TikTok">🎵</a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Andrés Restrepo</h4>
+            <p class="team-role">Senior Barber</p>
+            <div class="team-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/images/team-member.png" alt="Miguel Herrera - Style Expert" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="TikTok">🎵</a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Miguel Herrera</h4>
+            <p class="team-role">Style Expert</p>
+            <div class="team-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/images/team-member.png" alt="David Ospina - Color Specialist" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="TikTok">🎵</a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">David Ospina</h4>
+            <p class="team-role">Color Specialist</p>
+            <div class="team-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Testimonios</span>
+        <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="testimonials-slider reveal">
+        <div class="testimonials-track">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote-icon">"</div>
+              <p class="testimonial-text">La mejor experiencia de barbería que he tenido. El ambiente, la atención y el resultado son simplemente impecables. Carlos es un artista con las tijeras.</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">JR</div>
+                <div class="testimonial-author-info">
+                  <div class="testimonial-name">Juan Rodríguez</div>
+                  <div class="testimonial-role">Cliente VIP desde 2020</div>
+                  <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote-icon">"</div>
+              <p class="testimonial-text">Los tratamientos faciales son increíbles. Mi piel nunca se había sentido tan bien. El combo VIP es una experiencia que todo hombre debería probar al menos una vez.</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">SM</div>
+                <div class="testimonial-author-info">
+                  <div class="testimonial-name">Sebastián Martínez</div>
+                  <div class="testimonial-role">Cliente frecuente</div>
+                  <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote-icon">"</div>
+              <p class="testimonial-text">He probado muchas barberías pero BARBERS ELITE está en otro nivel. Los productos que usan son de primera y siempre salgo con un look perfecto. 100% recomendado.</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">DG</div>
+                <div class="testimonial-author-info">
+                  <div class="testimonial-name">Daniel García</div>
+                  <div class="testimonial-role">Cliente desde 2021</div>
+                  <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote-icon">"</div>
+              <p class="testimonial-text">El minoxidil que me recomendaron cambió totalmente mi barba. Además, los barberos siempre dan los mejores consejos de grooming. Una experiencia completa.</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">AL</div>
+                <div class="testimonial-author-info">
+                  <div class="testimonial-name">Alejandro López</div>
+                  <div class="testimonial-role">Cliente frecuente</div>
+                  <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="testimonial-btn prev" aria-label="Anterior">←</button>
+          <button class="testimonial-btn next" aria-label="Siguiente">→</button>
+        </div>
+
+        <div class="testimonial-dots">
+          <button class="testimonial-dot active" aria-label="Slide 1"></button>
+          <button class="testimonial-dot" aria-label="Slide 2"></button>
+          <button class="testimonial-dot" aria-label="Slide 3"></button>
+          <button class="testimonial-dot" aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Contáctanos</span>
+        <h2 class="section-title">Reserva Tu Experiencia</h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">Estamos listos para atenderte. Agenda tu cita o escríbenos para cualquier consulta.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="reveal-left">
+          <div class="contact-info-cards">
+            <div class="contact-info-card">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-info-label">Dirección</div>
+                <div class="contact-info-value">Calle 85 #15-30, Zona T, Bogotá</div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-icon">📞</div>
+              <div>
+                <div class="contact-info-label">Teléfono</div>
+                <div class="contact-info-value">+57 300 123 4567</div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-icon">📧</div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">info@barberselite.com</div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-icon">🕐</div>
+              <div>
+                <div class="contact-info-label">Horarios</div>
+                <div class="contact-info-value">Lun-Vie 9am-8pm | Sáb 8am-6pm | Dom 9am-3pm</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#" class="contact-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="contact-social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="contact-social-link" aria-label="TikTok">🎵</a>
+            <a href="#" class="contact-social-link" aria-label="YouTube">▶️</a>
+          </div>
+
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5!2d-74.054!3d4.668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDAnMDUuMCJOIDc0wrAwMycxNC4wIlc!5e0!3m2!1ses!2sco!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación BARBERS ELITE"></iframe>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper reveal-right">
+          <h3 class="contact-form-title">Envíanos un Mensaje</h3>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Nombre</label>
+                <input type="text" id="contact-name" name="name" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Teléfono</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+57 300 000 0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+              <label for="contact-service">Servicio de Interés</label>
+              <select id="contact-service" name="service">
+                <option value="">Selecciona un servicio</option>
+                <option value="corte">Corte de Cabello</option>
+                <option value="barba">Arreglo de Barba</option>
+                <option value="combo">Combo VIP</option>
+                <option value="facial">Tratamiento Facial</option>
+                <option value="keratina">Keratina</option>
+                <option value="color">Coloración</option>
+                <option value="productos">Productos</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Mensaje</label>
+              <textarea id="contact-message" name="message" placeholder="Cuéntanos cómo podemos ayudarte..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width:100%;">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#hero" class="nav-logo" style="display:inline-flex; margin-bottom: 4px;">
+            <div class="nav-logo-icon">BE</div>
+            <div class="nav-logo-text">BARBERS <span>ELITE</span></div>
+          </a>
+          <p class="footer-brand-desc">La barbería premium donde cada corte es una obra maestra. Servicios exclusivos, productos de alta gama y un equipo de expertos dedicados a tu estilo.</p>
+          <div class="contact-socials">
+            <a href="#" class="contact-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="contact-social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="contact-social-link" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Enlaces</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#treatments">Tratamientos</a></li>
+            <li><a href="#team">Equipo</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Corte Clásico</a></li>
+            <li><a href="#services">Arreglo de Barba</a></li>
+            <li><a href="#services">Exfoliación</a></li>
+            <li><a href="#services">Mascarilla Facial</a></li>
+            <li><a href="#services">Combo VIP</a></li>
+            <li><a href="#services">Estilos Personalizados</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Horarios</h4>
+          <ul class="footer-schedule">
+            <li><span class="day">Lunes - Viernes</span><span class="hours">9:00 AM - 8:00 PM</span></li>
+            <li><span class="day">Sábados</span><span class="hours">8:00 AM - 6:00 PM</span></li>
+            <li><span class="day">Domingos</span><span class="hours">9:00 AM - 3:00 PM</span></li>
+            <li><span class="day">Festivos</span><span class="hours">10:00 AM - 2:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2024 <a href="#hero">BARBERS ELITE</a>. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING ELEMENTS ========== -->
+
+  <!-- WhatsApp Float -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-float-tooltip">¿Necesitas ayuda? ¡Escríbenos!</div>
+    <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20información%20sobre%20BARBERS%20ELITE" target="_blank" class="whatsapp-float-btn" aria-label="WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container">
+    <button class="chatbot-toggle" aria-label="Abrir chat">💬</button>
+    <div class="chatbot-window">
+      <div class="chatbot-header">
+        <div class="chatbot-header-avatar">BE</div>
+        <div class="chatbot-header-info">
+          <div class="chatbot-header-name">BARBERS ELITE Bot</div>
+          <div class="chatbot-header-status">En línea</div>
+        </div>
+        <button class="chatbot-close" aria-label="Cerrar chat">✕</button>
+      </div>
+      <div class="chatbot-messages"></div>
+      <div class="chatbot-input">
+        <input type="text" placeholder="Escribe tu mensaje..." aria-label="Mensaje">
+        <button class="chatbot-send" aria-label="Enviar">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Volver arriba">↑</button>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <button class="lightbox-close" aria-label="Cerrar">✕</button>
+    <img src="" alt="Galería ampliada">
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+
+</body>
+</html>
